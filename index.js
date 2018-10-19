@@ -1,6 +1,7 @@
 /**
  * NMEA 
  * @author Renato Miawaki
+ * @email renato.miawaki@gmail.com 
  */
 const Buffer        = require('buffer').Buffer ;
 const nmeaCheck     = require('nmea-checksum') ;

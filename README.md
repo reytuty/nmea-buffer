@@ -96,3 +96,6 @@ client.on('data', function(data) {
     //out object { header, message }
 }
 ``` 
+
+@author Renato Seiji Miawaki - 2018
+@email renato.miawaki@gmail.com 
