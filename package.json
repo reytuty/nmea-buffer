@@ -1,0 +1,30 @@
+{
+  "name": "nmea-buffer",
+  "version": "1.0.0",
+  "description": "To send and parse nmea messages by socket",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/reytuty/nmea-buffer.git"
+  },
+  "keywords": [
+    "nmea",
+    "nmea-socket",
+    "nmea-buffer",
+    "miawaki",
+    "renato",
+    "miawaki",
+    "string",
+    "to",
+    "nmea"
+  ],
+  "author": "Renato Seiji Miawaki",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reytuty/nmea-buffer/issues"
+  },
+  "homepage": "https://github.com/reytuty/nmea-buffer#readme"
+}
