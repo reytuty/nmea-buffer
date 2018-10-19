@@ -1,6 +1,6 @@
 {
   "name": "nmea-buffer",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "To send and parse nmea messages by socket",
   "main": "index.js",
   "scripts": {
@@ -26,5 +26,9 @@
   "bugs": {
     "url": "https://github.com/reytuty/nmea-buffer/issues"
   },
-  "homepage": "https://github.com/reytuty/nmea-buffer#readme"
+  "homepage": "https://github.com/reytuty/nmea-buffer#readme",
+  "dependencies": {
+    "buffer": "^5.2.1",
+    "nmea-checksum": "0.0.1"
+  }
 }
