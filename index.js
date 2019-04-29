@@ -5,11 +5,18 @@
  */
 const Buffer                = require('buffer').Buffer ;
 const nmeaCheck             = require('nmea-checksum') ;
-
+const strLen = (len)=>{
+    //são 4 espaços para o len
+    var digits = len.toString().length;
+    var spaces = 4 - digits ;
+    var whiteSpaces = "    ".substr(0, spaces ) ;
+    return whiteSpaces+len ;
+}
 const getMessageBuffer = (header, m, forceCheckSum = null )=>{
     //message size + 12 before $
     var len = m.length + 12 ;
-    var s = "  "+len+"$"+header+","+m+"*";
+    
+    var s = strLen(len)+"$"+header+","+m+"*";
     if(!forceCheckSum) {
         forceCheckSum = nmeaCheck.checksum(m);
     }
@@ -34,15 +41,15 @@ const bufferToUint8 = (buf)=>{
  * @param {*} message2Array 
  */
 const parse = (data, message2Array = true)=>{
-    var m = data.toString();
-    m = m.split("$");
+    var m = data.toString() ;
+    m = m.split("$") ;
     m.shift() ;
     m = m.join("").split("*") ;
     m.pop() ;
     m = m.join("").split(",") ;
     const header = m.shift() ;
     const message = (message2Array)?m:m.join(",") ;
-    return {header, message}
+    return { header, message }
 }
 module.exports = {
     getMessageBuffer,

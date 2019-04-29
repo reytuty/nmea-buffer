@@ -1,6 +1,6 @@
 {
   "name": "nmea-buffer",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "To send and parse nmea messages by socket",
   "main": "index.js",
   "scripts": {
