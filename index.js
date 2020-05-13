@@ -46,7 +46,7 @@ const bufferToUint8 = (buf)=>{
  */
 const parse = (data, message2Array = true)=>{
     var m = data.toString() ;
-    m = m.split("$") ;
+    m = m.split(/\$|!/gi) ;
     m.shift() ;
     m = m.join("").split("*") ;
     m.pop() ;
