@@ -12,13 +12,17 @@ const strLen = (len)=>{
     var whiteSpaces = "    ".substr(0, spaces ) ;
     return whiteSpaces+len ;
 }
-const getMessageBuffer = (header, m, forceCheckSum = null )=>{
+const getMessageBuffer = (header, m, forceCheckSum = null, useLength = true, simbol = "$" )=>{
     //message size + 12 before $
-    var len = m.length + 12 ;
+    var s = "";
+    if(useLength){
+        var len = m.length + 12 ;
+        s += strLen(len)
+    }
+    s += simbol+header+","+m+"*";
     
-    var s = strLen(len)+"$"+header+","+m+"*";
     if(!forceCheckSum) {
-        forceCheckSum = nmeaCheck.checksum(m);
+        forceCheckSum = nmeaCheck.checksum(header+","+m);
     }
     s += forceCheckSum ;
     return bufferToUint8( string2Buffer(s) );
